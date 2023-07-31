@@ -1,0 +1,23 @@
+from googletrans import Translator
+
+def translate_text(text, source_language='auto', target_language='en'):
+    """
+    Function to translate text from the source language to the target language.
+
+    Parameters:
+    text (str): The text to be translated.
+    source_language (str): The source language code (default is 'auto').
+    target_language (str): The target language code (default is 'en').
+
+    Returns:
+    str: The translated text.
+    """
+    translator = Translator()
+    translated_text = translator.translate(text, src=source_language, dest=target_language)
+    return translated_text.text
+
+# Test the Translator App
+input_text = "Hola, ¿cómo estás?"
+translated_text = translate_text(input_text, source_language='es', target_language='en')
+print(f"Original text: {input_text}")
+print(f"Translated text: {translated_text}")
